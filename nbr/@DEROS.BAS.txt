@@ -1,0 +1,686 @@
+100 CLS
+110 DEFDBL A-Z
+120 PRINT"     ‡œ©©˜¢¦¤å¡ž, 1986                                       "
+130 PRINT
+140 PRINT
+150 PRINT"     ******     *******   ******      ******     ******      "
+160 PRINT"     ***  ***   ***       ***  ***   ***  ***   ****   *     "
+170 PRINT"     ***  ***   *****     ***  ***   ***  ***     ****       "
+180 PRINT"     ***  ***   ***       ******     ***  ***   *   ****     "
+190 PRINT"     ******     *******   ***  ***    ******     ******      "
+200 PRINT
+210 PRINT
+220 PRINT"     EŒ€ Ž‚€‹‹€ ‚I€ ’† ‘“ŒŽ‡—‘† † ’† „Š’ˆ‘’ŽŽˆ†‘†      "
+230 PRINT"     Žˆ…ŽŒ’ˆ—Œ ƒˆ‰’“—Œ „Š„‚•Ž“                              "
+240 PRINT
+250 PRINT
+260 PRINT"     ‚¢é©©˜    : BASICA                               "
+270 PRINT"     €¡¨å™œ ˜  : ƒ §¢ã                                "
+280 PRINT"     ¨¦š¨˜££˜« ©«âª :  A. ƒœ¨£á¤žª ¡˜  ƒ. à©© ¡æ§¦¬¢¦ª "
+290 PRINT"     ’¦£â˜ª ‚œà›˜ ©å˜ª ¡˜  T¦§¦š¨˜­å˜ª                "
+300 PRINT"     €¨ ©«¦«â¢œ ¦ ˜¤œ§ ©«ã£ ¦ ‡œ©©˜¢¦¤å¡žª           "
+310 PRINT
+320 PRINT
+330 PRINT: PRINT"     á«ž©œ ¦§¦ ¦›ã§¦«œ §¢ã¡«¨¦ š ˜ ¤˜ ©¬¤œ®å©à ! "
+340 A$=INKEY$: IF A$="" GOTO 340
+350 MESS1$=" *** Š€‡Ž‘ Š†‰’Ž ! ˜¨˜¡˜¢é, §¨¦©§áŸž©œ §á¢  ! *** "
+360 REM **********************************************************************
+370 CLS
+380 PRINT: PRINT"    „ˆŠŽ‚† €€ŠŠ€‚†‘ Ž‚€‹‹€’Ž‘ : "
+390 PRINT
+400 PRINT"       1  Šç©ž       "
+410 PRINT"       2  „¥¦£¦åà©ž  "
+420 PRINT: INPUT"  „ˆŠŽ‚† "; VER%
+430 IF VER%=1 OR VER%=2 GOTO 460
+440 CLS: PRINT: PRINT MESS1$: GOTO 380
+450 REM **********************************************************************
+460 CLS: INPUT" ƒ—‘„ ’Ž ‘“ŒŽŠˆ‰Ž €ˆ‡‹Ž ’—Œ ‘†‹„ˆ—Œ "; N1%
+470 PRINT"-------------------------------------------------------------------"
+480 PRINT" ƒ—‘„ ’ŽŒ ‹„‚€Š“’„Ž ‰—ƒˆ‰Ž €ˆ‡‹Ž ‚ˆ€ "
+490 INPUT" ’†Œ „—’„ˆ‰† €Œ€‚Œ—ˆ‘† ‘†‹„ˆŽ“      "; NMAX%
+500 PRINT"-------------------------------------------------------------------"
+510 INPUT" ƒ—‘„ ’Ž ‘“ŒŽŠˆ‰Ž €ˆ‡‹Ž ’—Œ ‘„ˆ—Œ ƒˆ„“‡“Œ‘„—Œ "; ND%
+520 PRINT"-------------------------------------------------------------------"
+530 IF ND%<>0 THEN 540 ELSE NDMAX%=1: GOTO 570
+540 PRINT" ƒ—‘„ ’ŽŒ ‹„‚€Š“’„Ž ‰—ƒˆ‰Ž €ˆ‡‹Ž ‚ˆ€ ’†Œ "
+550 INPUT" E—’„ˆ‰† €Œ€‚Œ—ˆ‘† ‘„ˆ€‘ ƒˆ„“‡“Œ‘„—Œ   "; NDMAX%
+560 PRINT"-------------------------------------------------------------------"
+570 PRINT" ƒ—‘„ ’ŽŒ M„‚€Š“’„Ž €ˆ‡‹Ž ’—Œ :"
+580 PRINT" - ‘’€‡„—Œ ‘“Œ’„’€‚‹„Œ—Œ (š ˜ «ž ¢ç©ž £œ ©«˜Ÿœ¨âª ©¬¤«œ«˜š£â¤œª),"
+590 PRINT" - † ‘†‹„ˆ—Œ (š ˜ «ž ¢ç©ž £œ £œ¨ ¡âª œ©à«œ¨ ¡âª ›œ©£œç©œ ª)"
+600 PRINT" ‚ˆ€ ’ŽŒ Žˆ‘‹Ž ’Ž“ ‘“‘’†‹€’Ž‘ €Œ€”Ž€‘"
+610 INPUT" ‘’ˆ‘ ƒˆ€”Ž„‘ „Œ€ŠŠ€‰’ˆ‰„‘ Š“‘„ˆ‘     "; NCMAX%
+620 CLS
+630 INPUT" ƒ—‘„ ’Ž ŽŒŽ‹€ ’Ž“ €•„ˆŽ“ ’—Œ ‘“Œ’„’€‚‹„Œ—Œ ’—Œ ‘†‹„ˆ—Œ "; FILE1$
+640 PRINT"------------------------------------------------------------------"
+650 INPUT" ƒ—‘„ ’Ž ŽŒŽ‹€ ’Ž“ €•„ˆŽ“ ’—Œ €€’††‘„—Œ "; FILE2$
+660 REM **********************************************************************
+670 N2%=2*N1%: NU%=N2%+ND%: NN%=NU%*(NU%+1)/2: NH%=ND%+1: NCMAX%=NCMAX%+1
+680 DIM A(6),IDINV%(NMAX%),IDST%(N1%),CREN%(6),NFS%(NCMAX%),IDIR%(NDMAX%)
+690 DIM ORIEN(NH%),X(N1%),Y(N1%),N(NN%),U(NU%),XS(N2%),YS(ND%)
+700 P=4*ATN(1): CF=ATN(1)/50
+710 FOR I%=1 TO N2%: XS(I%)=0: NEXT I%
+720 FOR I%=1 TO ND%: IDIR%(I%)=0: NEXT I%
+730 REM **********************************************************************
+740 REM        1 „ˆ‘€‚—‚† ’—Œ ‘“Œ’„’€‚‹„Œ—Œ ’—Œ ‘†‹„ˆ—Œ
+750 REM *********************************************************************
+760 OPEN "I",#1,FILE1$
+770 I%=0
+780 IF EOF(1) THEN GOTO 850
+790 I%=I%+1
+800 IF I%>N1% THEN PRINT"*** Š€‡Ž‘ Ž €ˆ‡‹Ž‘ ‘†‹„ˆ—Œ Ž“ „ƒ—‘„‘ ***": END
+810 INPUT #1,J%,X(I%),Y(I%)
+820 IF J%>NMAX% THEN PRINT"*** Š€‡Ž‘ Ž ‹„‚ˆ‘’Ž‘ ‰—ƒˆ‰Ž‘ ‘†‹„ˆŽ“ ***": END
+830 IDST%(I%)=J%: IDINV%(J%)=I%
+840 GOTO 780
+850 CLOSE #1
+860 REM *********************************************************************
+870 REM       2 „‘€‚—‚† ’—Œ €€’††‘„—Œ ‰€ˆ
+880 REM         ƒ†‹ˆŽ“‚ˆ€ ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ
+890 REM *********************************************************************
+900 CLS: PRINT" ‘•†‹€’ˆ‘‹Ž‘ ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ "
+910 PRINT: PRINT" ˜¨˜¡˜¢é §œ¨å£œ¤œ ... "
+920 FOR I%=1 TO NU%: U(I%)=0: NEXT I%
+930 FOR I%=1 TO NN%: N(I%)=0: NEXT I%
+940 L1%=0: L2%=0: L3%=0: L4%=0
+950 SA=1: FLAG%=0
+960 IK%=0: IOB%=0
+970 OPEN "I",#1,FILE2$
+980 IF EOF(1) THEN GOTO 1710
+990 IOB%=IOB%+1
+1000 FOR I%=1 TO 6: A(I%)=0: NEXT I%
+1010 INPUT #1,II%,JJ%,KK%,OB,S,CODE%
+1020 I%=IDINV%(II%): J%=IDINV%(JJ%)
+1030 DX=X(J%)-X(I%): DY=Y(J%)-Y(I%)
+1040 SJ=DX^2+DY^2: GOSUB 6050
+1050 ON CODE% GOTO 1130,1280,1420,1500
+1060 PRINT"*** ’Ž Ž‚€‹‹€ ‘’€‹€’†‘„ „€ˆ’ˆ€‘ ‹† €Œ€‚Œ—ˆ‘ˆ‹Ž“ ***"
+1070 PRINT"*** €ˆ‡‹Ž“ ‚ˆ€ ’Ž „ˆƒŽ‘ ’†‘ €€’††‘†‘ ‘’† ‘„ˆ€ ";IOB%;" ***"
+1080 PRINT"*** TOY €•„ˆŽ“ ’—Œ €€’††‘„—Œ. ˜¨˜¡˜¢é › æ¨Ÿà©œ ! *** "
+1090 END
+1100 REM ---------------------------------------------------------------------
+1110 REM      1  ˜¨˜«ž¨ã©œ ª ¦¨ ¦¤«åà¤ › œ¬Ÿç¤©œà¤
+1120 REM ---------------------------------------------------------------------
+1130 L1%=L1%+1: NI%=5
+1140 IF KK%>NDMAX% THEN PRINT"*** Š€‡Ž‘ Ž ‹„‚. ‰—ƒˆ‰Ž‘ ‘.ƒˆ„“‡“Œ‘„—Œ ***": END
+1150 IF IDIR%(KK%)<>0 GOTO 1190
+1160 IK%=IK%+1: IDIR%(KK%)=IK%
+1170 TH=GJ-OB: ORIEN(IK%)=TH
+1180 GOTO 1200
+1190 IC%=IDIR%(KK%): TH=ORIEN(IC%)
+1200 R=OB-(GJ-TH): GOSUB 5960
+1210 A(1)=-DY/SJ*100/CF: A(2)=DX/SJ*100/CF
+1220 A(3)=DY/SJ*100/CF:  A(4)=-DX/SJ*100/CF: A(5)=-1
+1230 CREN%(5)=N2%+IDIR%(KK%)
+1240 GOTO 1570
+1250 REM ---------------------------------------------------------------------
+1260 REM       2  ˜¨˜«ž¨ã©œ ª ¦¨ ¦¤«åà¤ šà¤ é¤
+1270 REM ---------------------------------------------------------------------
+1280 L2%=L2%+1: NI%=6
+1290 R=OB+GJ: DXJ=DX: DYJ=DY: K%=IDINV%(KK%)
+1300 DX=X(K%)-X(I%): DY=Y(K%)-Y(I%)
+1310 SK=DX^2+DY^2: GOSUB 6050
+1320 DXK=DX: DYK=DY
+1330 R=R-GJ: GOSUB 5960
+1340 A(1)=(DYJ/SJ-DYK/SK)*100/CF: A(2)=(DXK/SK-DXJ/SJ)*100/CF
+1350 A(3)=-DYJ/SJ*100/CF: A(4)=DXJ/SJ*100/CF
+1360 A(5)=DYK/SK*100/CF: A(6)=-DXK/SK*100/CF
+1370 CREN%(5)=2*K%-1: CREN%(6)=2*K%
+1380 GOTO 1570
+1390 REM ---------------------------------------------------------------------
+1400 REM       3  ˜¨˜«ž¨ã©œ ª ¦¨ ¦¤«åà¤ ˜§¦©«á©œà¤
+1410 REM ---------------------------------------------------------------------
+1420 L3%=L3%+1: NI%=4
+1430 SJ=SQR(SJ): R=(OB-SJ)*100
+1440 A(1)=-DX/SJ: A(2)=-DY/SJ
+1450 A(3)=DX/SJ: A(4)=DY/SJ
+1460 GOTO 1570
+1470 REM ---------------------------------------------------------------------
+1480 REM       4  ˜¨˜«ž¨ã©œ ª ˜ £¦¬Ÿåà¤
+1490 REM ---------------------------------------------------------------------
+1500 L4%=L4%+1: NI%=4
+1510 R=OB-GJ: GOSUB 5960
+1520 A(1)=-DY/SJ*100/CF: A(2)=DX/SJ*100/CF
+1530 A(3)=DY/SJ*100/CF: A(4)=-DX/SJ*100/CF
+1540 REM ---------------------------------------------------------------------
+1550 REM       5  €¤á¢¬©ž «à¤ §˜¨˜«ž¨ã©œà¤ (¡¦ ¤æ £â¨¦ª)
+1560 REM ---------------------------------------------------------------------
+1570 CREN%(1)=2*I%-1: CREN%(2)=2*I%
+1580 CREN%(3)=2*J%-1: CREN%(4)=2*J%
+1590 IF FLAG%<>0 GOTO 4090
+1600 FOR ID%=1 TO NI%
+1610 II%=CREN%(ID%): U(II%)=U(II%)+A(ID%)*R/S^2
+1620 FOR JD%=1 TO ID%
+1630 JJ%=CREN%(JD%)
+1640 IF JJ%<II% THEN KK%=II%*(II%-1)/2+JJ% ELSE KK%=JJ%*(JJ%-1)/2+II%
+1650 N(KK%)=N(KK%)+A(ID%)*A(JD%)/S^2
+1660 NEXT JD%: NEXT ID%
+1670 GOTO 980
+1680 REM *********************************************************************
+1690 REM       3 €€ŠŽI”† ’—Œ ‘’€‡„—Œ Ž‘€Œ€’ŽŠˆ‘‹Ž“
+1700 REM *********************************************************************
+1710 CLOSE #1
+1720 ON FLAG% GOTO 4200,4710
+1730 LT%=L1%+L2%+L3%+L4%
+1740 IF L1%=0 GOTO 1850
+1750 IF IK%<>ND% THEN PRINT"*** Š€‡Ž‘ Ž €ˆ‡‹Ž‘ ’—Œ ‘„ˆ—Œ ƒˆ„“‡“Œ‘„—Œ ***": END
+1760 FOR K%=1 TO ND%
+1770 NK%=N2%+K%: KK%=NK%*(NK%+1)/2
+1780 FOR I%=1 TO N2%
+1790 IK%=NK%*(NK%-1)/2+I%
+1800 U(I%)=U(I%)-N(IK%)*U(NK%)/N(KK%)
+1810 FOR J%=1 TO I%
+1820 IJ%=I%*(I%-1)/2+J%: JK%=NK%*(NK%-1)/2+J%
+1830 N(IJ%)=N(IJ%)-N(IK%)*N(JK%)/N(KK%)
+1840 NEXT J%: NEXT I%: NEXT K%
+1850 OPEN "O",#1,"TEMPORAL"
+1860 FOR I%=1 TO NN%: WRITE #1, N(I%): NEXT I%
+1870 CLOSE #1
+1880 REM *********************************************************************
+1890 REM      4 Žˆ‘‹Ž‘ ’Ž“ ‘“‘’†‹€’Ž‘ €Œ€”Ž€‘
+1900 REM *********************************************************************
+1910 CLS
+1920 PRINT:  PRINT"    „ˆŠŽ‚† ’Ž“ ’“Ž“ ’—Œ ƒ„‘‹„“‘„—Œ : "
+1930 PRINT" (š ˜ «¦¤ ¦¨ ©£æ «¦¬ ©¬©«ã£˜«¦ª ˜¤˜­¦¨áª) "
+1940 PRINT
+1950 PRINT" ƒ—‘„   1  š ˜ ©«˜Ÿœ¨âª ©¬¤«œ«˜š£â¤œª"
+1960 PRINT"        2  š ˜ œ©à«œ¨ ¡âª ›œ©£œç©œ ª (œ¢œçŸœ¨¦ ›å¡«¬¦)"
+1970 PRINT"        3  š ˜ £œ¨ ¡âª œ©à«œ¨ ¡âª ›œ©£œç©œ ª"
+1980 PRINT: INPUT" „ˆŠŽ‚† "; CON: CLS
+1990 ON CON GOTO 2030,2040,2050
+2000 CLS: PRINT: PRINT MESS1$: GOTO 1920
+2010 REM ---------------------------------------------------------------------
+2020 CLS
+2030 PRINT" Š“‘† (H EŽ‹Žˆ—‘†) ‹„ ‘’€‡„„‘ ‘“Œ’„’€‚‹„Œ„‘": GOTO 2070
+2040 PRINT" Š“‘† († „Ž‹Žˆ—‘†) ‹„ „‘—’„ˆ‰„‘ ƒ„‘‹„“‘„ˆ‘": GOTO 2540
+2050 PRINT" Š“‘† (H EŽ‹Žˆ—‘†) ‹„ ‹„ˆ‰„‘ „‘—’„ˆ‰„‘ ƒ„‘‹„“‘„ˆ‘ "
+2060 REM ---------------------------------------------------------------------
+2070 KC%=0
+2080 PRINT"ƒé©œ «¦¤ ¡à› ¡æ ˜¨ Ÿ£æ œ¥à«œ¨ ¡ãª ˜¤˜š¤é¨ ©žª ©ž£œå¦¬"
+2090 IF CON=1 GOTO 2110
+2100 PRINT"§¦¬ Ÿ˜ ©¬£§œ¨ ¢ž­Ÿœå ©« ª £œ¨ ¡âª œ©à«œ¨ ¡âª ›œ©£œç©œ ª": GOTO 2130
+2110 PRINT"«¦¬ ¦§¦å¦¬ ¦  ©¬¤«œ«˜š£â¤œª (ã £å˜ ˜§æ « ª ©¬¤«œ«˜š£â¤œª)"
+2120 PRINT"Ÿ˜ ¡¨˜«žŸ¦ç¤ ©«˜Ÿœ¨âª"
+2130 PRINT"*** €’†‘„ ’Ž Š†‰’Ž <ENTER> ‘’Ž ’„ŠŽ‘ ***"
+2140 PRINT"*******************************************":PRINT
+2150 IF CON=3 THEN INPUT"‘TA‡‹Ž‘ Ž“ „ˆŠ€‹€Œ„’€ˆ ‘’ˆ‘ ‹„ˆ‰„‘ „‘—’„ˆ‰„‘ ƒ„‘‹„“‘„ˆ‘ ";IEX%
+2160 IF CON=1 THEN INPUT"‘’€‡‹Ž‘ ‹„ ‘’€‡„„‘ ‘“Œ’„’€‚‹„Œ„‘ ";IEX%
+2170 IF IEX%=0 THEN GOTO 2370
+2180 IF IEX%>NMAX% OR IDINV%(IEX%)=0 GOTO 2310
+2190 I%=IDINV%(IEX%): KC%=KC%+1
+2200 IF CON=3 THEN NFS%(KC%)=I%: GOTO 2150
+2210 PRINT"§¦ á ©¬¤«œ«˜š£â¤ž §˜¨˜£â¤œ  ©«˜Ÿœ¨ã ;"
+2220 PRINT
+2230 PRINT"ƒé©œ    1  š ˜ «ž¤ x ©¬¤«œ«˜š£â¤ž"
+2240 PRINT"        2  š ˜ «ž¤ y ©¬¤«œ«˜š£â¤ž"
+2250 PRINT"        3  š ˜ « ª ©¬¤«œ«˜š£â¤œª x ¡˜  y"
+2260 PRINT: INPUT" „§ ¢¦šã  "; FC%
+2270 PRINT"-------------------------------------------------"
+2280 IF FC%=1 THEN NFS%(KC%)=2*I%-1: GOTO 2150
+2290 IF FC%=2 THEN NFS%(KC%)=2*I%: GOTO 2150
+2300 IF FC%=3 THEN NFS%(KC%)=2*I%-1: KC%=KC%+1: NFS%(KC%)=2*I%: GOTO 2150
+2310 CLS: PRINT MESS1$
+2320 PRINT: PRINT"á«ž©œ ¦§¦ ¦›ã§¦«œ §¢ã¡«¨¦ š ˜ ¤˜ ˜¨®å©œ ª"
+2330 PRINT" «¦¤ ¦¨ ©£æ «à¤ ›œ©£œç©œà¤ ˜§æ «ž¤ ˜¨®ã ! "
+2340 B$=INKEY$: IF B$="" GOTO 2340
+2350 GOTO 2070
+2360 IX%=2*I%-1: IY%=2*I%
+2370 IF CON=3 GOTO 2540
+2380 REM ---------------------------------------------------------------------
+2390 REM     1  Šç©ž £œ ©«˜Ÿœ¨âª ©¬¤«œ«˜š£â¤œª
+2400 REM ---------------------------------------------------------------------
+2410 COUNT%=0
+2420 FOR J%=1 TO N2%
+2430 FOR I%=1 TO J%
+2440 IJ%=J%*(J%-1)/2+I%
+2450 FOR K%=1 TO KC%
+2460 IF I%=NFS%(K%) OR J%=NFS%(K%) GOTO 2490
+2470 NEXT K%
+2480 COUNT%=COUNT%+1: N(COUNT%)=N(IJ%)
+2490 NEXT I%: NEXT J%
+2500 PF%=KC%: GOTO 2910
+2510 REM ---------------------------------------------------------------------
+2520 REM     2  „©à«œ¨ ¡âª ã £œ¨ ¡âª œ©à«œ¨ ¡âª ›œ©£œç©œ ª
+2530 REM ---------------------------------------------------------------------
+2540 IF CON=2 THEN II%=N1% ELSE II%=KC%
+2550 XM=0: YM=0: D=0
+2560 FOR I%=1 TO II%
+2570 IF CON=2 THEN IES%=I% ELSE IES%=NFS%(I%)
+2580 XM=XM+X(IES%)/II%: YM=YM+Y(IES%)/II%
+2590 NEXT I%
+2600 FOR I%=1 TO II%
+2610 IF CON=2 THEN IES%=I% ELSE IES%=NFS%(I%)
+2620 D=D+(X(IES%)-XM)^2/II%+(Y(IES%)-YM)^2/II%
+2630 NEXT I%
+2640 D=SQR(D)
+2650 FOR I%=1 TO II%
+2660 IF CON=2 THEN IES%=I% ELSE IES%=NFS%(I%)
+2670 IX%=2*IES%-1: IY%=2*IES%
+2680 FOR J%=1 TO I%
+2690 IF CON=2 THEN JES%=J% ELSE JES%=NFS%(J%)
+2700 JX%=2*JES%-1: JY%=2*JES%
+2710 GOSUB 6170
+2720 N(XX%)=N(XX%)+1: N(YY%)=N(YY%)+1
+2730 PF%=2
+2740 IF L3%<>0 GOTO 2800
+2750 N(XX%)=N(XX%)+(X(IES%)-XM)/D*(X(JES%)-XM)/D
+2760 N(XY%)=N(XY%)+(X(IES%)-XM)/D*(Y(JES%)-YM)/D
+2770 IF I%<>J% THEN N(YX%)=N(YX%)+(Y(IES%)-YM)/D*(X(JES%)-XM)/D
+2780 N(YY%)=N(YY%)+(Y(IES%)-YM)/D*(Y(JES%)-YM)/D
+2790 PF%=PF%+1
+2800 IF L4%<>0 GOTO 2860
+2810 N(XX%)=N(XX%)+(Y(IES%)-YM)/D*(Y(JES%)-YM)/D
+2820 N(XY%)=N(XY%)-(Y(IES%)-YM)/D*(X(JES%)-XM)/D
+2830 IF I%<>J% THEN N(YX%)=N(YX%)-(X(IES%)-XM)/D*(Y(JES%)-YM)/D
+2840 N(YY%)=N(YY%)+(X(IES%)-XM)/D*(X(JES%)-XM)/D
+2850 PF%=PF%+1
+2860 NEXT J%: NEXT I%
+2870 REM *********************************************************************
+2880 REM        5 €Œ’ˆ‘’Ž”† ’Ž“ ˆŒ€‰€ ’—Œ ‘“Œ’„Š„‘’—Œ
+2890 REM          ’—Œ €‚Œ—‘’—Œ ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ
+2900 REM *********************************************************************
+2910 IF CON=1 THEN IL%=N2%-KC% ELSE IL%=N2%
+2920 ILV%=IL%*(IL%+1)/2
+2930 CLS: PRINT" ˜¨˜¡˜¢é §œ¨å£œ¤œ ... ": PRINT
+2940 PRINT" €Œ’ˆ‘’Ž”† ’Ž“ ˆŒ€‰€ ’—Œ ‘“Œ’„Š„‘’—Œ ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ"
+2950 GOSUB 6270
+2960 ON CON-1 GOTO 3130,3130
+2970 REM ---------------------------------------------------------------------
+2980 REM     1  Šç©ž £œ ©«˜Ÿœ¨âª ©¬¤«œ«˜š£â¤œª
+2990 REM ---------------------------------------------------------------------
+3000 ID%=ILV%
+3010 FOR J%=N2% TO 1 STEP -1
+3020 FOR I%=J% TO 1 STEP -1
+3030 IJ%=J%*(J%-1)/2+I%
+3040 FOR K%=1 TO KC%
+3050 IF I%=NFS%(K%) OR J%=NFS%(K%) THEN N(IJ%)=0: GOTO 3080
+3060 NEXT K%
+3070 N(IJ%)=N(ID%): ID%=ID%-1
+3080 NEXT I%: NEXT J%
+3090 GOTO 3300
+3100 REM ---------------------------------------------------------------------
+3110 REM     2  „©à«œ¨ ¡âª ã £œ¨ ¡âª œ©à«œ¨ ¡âª ›œ©£œç©œ ª
+3120 REM ---------------------------------------------------------------------
+3130 FOR I%=1 TO N1%
+3140 IX%=2*I%-1: IY%=2*I%
+3150 FOR J%=1 TO I%
+3160 JX%=2*J%-1: JY%=2*J%
+3170 GOSUB 6200
+3180 N(XX%)=N(XX%)-1/II%^2: N(YY%)=N(YY%)-1/II%^2
+3190 IF L3%<>0 GOTO 3240
+3200 N(XX%)=N(XX%)-(X(I%)-XM)/D*(X(J%)-XM)/D/II%^2
+3210 N(XY%)=N(XY%)-(X(I%)-XM)/D*(Y(J%)-YM)/D/II%^2
+3220 IF I%<>J% THEN N(YX%)=N(YX%)-(Y(I%)-YM)/D*(X(J%)-XM)/D/II%^2
+3230 N(YY%)=N(YY%)-(Y(I%)-YM)/D*(Y(J%)-YM)/D/II%^2
+3240 IF L4%<>0 GOTO 3290
+3250 N(XX%)=N(XX%)-(Y(I%)-YM)/D*(Y(J%)-YM)/D/II%^2
+3260 N(XY%)=N(XY%)+(Y(I%)-YM)/D*(X(J%)-XM)/D/II%^2
+3270 IF I%<>J% THEN N(YX%)=N(YX%)+(X(I%)-XM)/D*(Y(J%)-YM)/D/II%^2
+3280 N(YY%)=N(YY%)-(X(I%)-XM)/D*(X(J%)-XM)/D/II%^2
+3290 NEXT J%: NEXT I%
+3300 IF VER%=2 GOTO 4810
+3310 REM *********************************************************************
+3320 REM         6 Š“‘† ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ
+3330 REM *********************************************************************
+3340 FOR I%=1 TO N2%
+3350 XS(I%)=0
+3360 FOR J%=1 TO N2%
+3370 IF J%<I% THEN IJ%=I%*(I%-1)/2+J% ELSE IJ%=J%*(J%-1)/2+I%
+3380 XS(I%)=XS(I%)+N(IJ%)*U(J%)
+3390 NEXT J%: NEXT I%
+3400 REM *********************************************************************
+3410 REM         7 „‰’“—‘† ’†‘ Š“‘†‘ ’—Œ ‰€ŒŽŒˆ‰—Œ „I‘—‘„—Œ
+3420 REM *********************************************************************
+3430 CLS: PRINT" „‰’“—‘† ’†‘ Š“‘†‘ ’—Œ ‰€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ"
+3440 LPRINT
+3450 LPRINT"  1  Š“‘† ’—Œ K€ŒŽŒˆ‰—Œ „ˆ‘—‘„—Œ "
+3460 LPRINT
+3470 LPRINT TAB(4) "§¨¦©œšš ©« ¡âª ©¬¤«œ«˜š£â¤œª" TAB(36) "› ¦¨Ÿé©œ ª";
+3480 LPRINT TAB(49) "©¬¤¦¨Ÿà£â¤œª ©¬¤«œ«˜š£â¤œª"
+3490 LPRINT TAB(13) "x" TAB(25) "y" TAB(36) "dx" TAB(45) "dy";
+3500 LPRINT TAB(56) "x" TAB(68) "y"
+3510 LPRINT TAB(12) "(m)" TAB(24) "(m)" TAB(35) "(cm)" TAB(44) "(cm)";
+3520 LPRINT TAB(55) "(m)" TAB(67) "(m)"
+3530 LPRINT
+3540 REM ---------------------------------------------------------------------
+3550 FOR I%=1 TO N1%
+3560 II%=IDST%(I%): IX%=2*I%-1: IY%=2*I%
+3570 LPRINT USING"####";II%;:LPRINT USING"########.###";X(I%),Y(I%);
+3580 IFL%=0: JFL%=0
+3590 IF CON<>1 GOTO 3640
+3600 FOR J%=1 TO KC%
+3610 IF IX%=NFS%(J%) THEN IFL%=1
+3620 IF IY%=NFS%(J%) THEN JFL%=1
+3630 NEXT J%
+3640 IF IFL%=0 THEN LPRINT TAB(31);USING"#####.##";XS(IX%);
+3650 IF JFL%=0 THEN LPRINT TAB(40);USING"#####.##";XS(IY%);
+3660 LPRINT TAB(49);USING"########.###";X(I%)+XS(IX%)/100,Y(I%)+XS(IY%)/100
+3670 NEXT I%
+3680 LPRINT
+3690 REM *********************************************************************
+3700 REM        8 “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ A-POSTERIORI ‘”€Š‹€’—Œ
+3710 REM *********************************************************************
+3720 CLS: IFL%=0
+3730 PRINT" ‡â¢œ ª «¦¤ ¬§¦¢¦š ©£æ ©«˜« ©« ¡é¤"
+3740 INPUT" ©«¦ ®œåà¤ š ˜ ©á¨à©ž ›œ›¦£â¤à¤ (Œ/Ž) "; A$
+3750 IF A$="Œ" OR A$="¤" THEN IFL%=1
+3760 IF A$="N" OR A$="n" THEN IFL%=1
+3770 CLS: PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ ‰€ˆ „‰’“—‘† ’—Œ A-POSTERIORI ‘”€Š‹€’—Œ"
+3780 PRINT: PRINT" ˜¨˜¡˜¢é §œ¨å£œ¤œ ... "
+3790 LPRINT: LPRINT
+3800 LPRINT" 2 ‘“ŒŽ‡—‹„Œ„‘ €€’††‘„ˆ‘"
+3810 IF IFL%=1 THEN LPRINT"   ‰€ˆ ‘’€’ˆ‘’ˆ‰€ ‘’Žˆ•„ˆ€ ‚ˆ€ ’† ‘€P—‘† ƒ„ƒŽ‹„Œ—Œ"
+3820 LPRINT
+3830 LPRINT"  ˜§æ §¨¦ª" TAB(17) "§˜¨˜«ã¨ž©ž" TAB(29) "«¬§ ¡ã" TAB(40) "©­á¢£˜";
+3840 LPRINT TAB(48) "©¬¤¦¨Ÿà£â¤ž";
+3850 IF IFL%=1 THEN LPRINT TAB(62) "©­á¢£˜ £œ" ELSE LPRINT
+3860 LPRINT TAB(4) "i" TAB(8) "j" TAB(12) "k" ;
+3870 LPRINT TAB(29) "˜§æ¡¢ ©ž" TAB(48) "§˜¨˜«ã¨ž©ž";
+3880 IF IFL%=1 THEN LPRINT TAB(62) "œ¥à«œ¨ ¡ã": LPRINT TAB(62) "¦£˜¢¦§¦åž©ž";
+3890 LPRINT
+3900 LPRINT TAB(18) "(grad,m)" TAB(29) "(cc,cm)" TAB(39) "(cc,cm)";
+3910 LPRINT TAB(50) "(grad,m)"
+3920 LPRINT
+3930 REM ---------------------------------------------------------------------
+3940 REM     1  “§¦¢¦š ©£æª «à¤ ©«˜Ÿœ¨é¤ §¨¦©˜¤˜«¦¢ ©£¦ç
+3950 REM ---------------------------------------------------------------------
+3960 IF L1%=0 GOTO 4080
+3970 FOR I%=1 TO ND%
+3980 II%=N2%+I%: KK%=II%*(II%+1)/2
+3990 YS(I%)=U(II%)
+4000 FOR K%=1 TO N2%
+4010 IK%=II%*(II%-1)/2+K%: YS(I%)=YS(I%)-N(IK%)*XS(K%)
+4020 NEXT K%
+4030 YS(I%)=YS(I%)/N(KK%)
+4040 NEXT I%
+4050 REM ---------------------------------------------------------------------
+4060 REM     2  “§¦¢¦š ©£æª «à¤ ©­˜¢£á«à¤ «à¤ §˜¨˜«ž¨ã©œà¤
+4070 REM ---------------------------------------------------------------------
+4080 FI=0: FLAG%=1: GOTO 960
+4090 V=0
+4100 IF CODE%=1 THEN NI%=4
+4110 FOR ID%=1 TO NI%
+4120 IX%=CREN%(ID%): V=V+A(ID%)*XS(IX%)
+4130 NEXT ID%
+4140 IF CODE%<>1 THEN GOTO 4160
+4150 ES%=IDIR%(KK%): V=V-YS(ES%)
+4160 V=R-V
+4170 IF FLAG%=2 GOTO 4270
+4180 FI=FI+V*V/S^2
+4190 GOTO 980
+4200 F%=LT%-N2%+PF%-ND%: SA=FI/F%
+4210 REM *********************************************************************
+4220 REM    9 “ŽŠŽ‚ˆ‘‹Ž‘ ‘’€’ˆ‘’ˆ‰—Œ ‘’Žˆ•„ˆ—Œ ‚ˆ€ ’† ‘€—‘† ƒ„ƒŽ‹„Œ—Œ
+4230 REM *********************************************************************
+4240 FLAG%=2: GOTO 960
+4250 REM     1  „¡«ç§à©ž «à¤ ©­˜¢£á«à¤ «à¤ §˜¨˜«ž¨ã©œà¤
+4260 REM ---------------------------------------------------------------------
+4270 LPRINT USING"####";II%,JJ%,KK%;
+4280 IF CODE%<>3 THEN LPRINT USING"#######.#####";OB;
+4290 IF CODE%=3 THEN LPRINT USING"#########.###";OB;
+4300 LPRINT USING"#####.##";S;
+4310 LPRINT USING"########.##";V;
+4320 IF CODE%<>3 THEN LPRINT USING"#######.#####";OB-V/10000;
+4330 IF CODE%=3 THEN LPRINT USING"#########.###";OB-V/100;
+4340 IF IFL%=0 THEN LPRINT: GOTO 980
+4350 REM     2  “§¦¢¦š ©£æª «à¤ £œ«˜™¢ž«¦«ã«à¤ «à¤ ©­˜¢£á«à¤
+4360 REM        ˜. † œ§å›¨˜©ž «à¤ ©«˜Ÿœ¨é¤ §¨¦©˜¤˜«¦¢ ©£¦ç
+4370 REM ---------------------------------------------------------------------
+4380 R=0
+4390 IF CODE%<>1 GOTO 4560
+4400 KD%=IDIR%(KK%)+N2%: KDD%=KD%*(KD%+1)/2: R=R+1/N(KDD%)
+4410 FOR I%=1 TO N2%
+4420 KI%=KD%*(KD%-1)/2+I%
+4430 FOR ID%=1 TO NI%
+4440 L%=CREN%(ID%)
+4450 IF I%<L% THEN IL%=L%*(L%-1)/2+I% ELSE IL%=I%*(I%-1)/2+L%
+4460 R=R+2*A(ID%)*N(IL%)*N(KI%)/N(KDD%)
+4470 NEXT ID%
+4480 FOR J%=1 TO I%
+4490 KJ%=KD%*(KD%-1)/2+J%
+4500 IJ%=I%*(I%-1)/2+J%
+4510 IF I%=J% THEN ML%=1 ELSE ML%=2
+4520 R=R+ML%*N(KI%)*N(KJ%)*N(IJ%)/N(KDD%)^2
+4530 NEXT J%: NEXT I%
+4540 REM ---------------------------------------------------------------------
+4550 REM        ™. ‰¦ ¤æ £â¨¦ª (š ˜ æ¢œª « ª §˜¨˜£â«¨¦¬ª)
+4560 FOR ID%=1 TO NI%
+4570 I%=CREN%(ID%)
+4580 FOR JD%=1 TO NI%
+4590 J%=CREN%(JD%)
+4600 IF I%<J% THEN K%=J%*(J%-1)/2+I% ELSE K%=I%*(I%-1)/2+J%
+4610 R=R+A(ID%)*N(K%)*A(JD%)
+4620 NEXT JD%
+4630 NEXT ID%
+4640 SV2=SA*(S^2-R)
+4650 REM     3  “§¦¢¦š ©£æª ¡˜  œ¡«ç§à©ž «¦¬ ¦£˜¢¦§¦ ž£â¤¦¬ ©­á¢£˜«¦ª
+4660 REM ---------------------------------------------------------------------
+4670 R=V/SQR(SV2)
+4680 T=R*SQR((F%-1)/(F%-R^2))
+4690 LPRINT USING"######.##";T
+4700 GOTO 980
+4710 CLOSE #1
+4720 LPRINT: LPRINT
+4730 LPRINT USING" 3  a-posteriori £œ«˜™¢ž«æ«ž«˜ = ###.####";SA
+4740 LPRINT USING"    a-posteriori «¬§ ¡ã ˜§æ¡¢ ©ž = ###.##";SQR(SA)
+4750 LPRINT USING"    ™˜Ÿ£¦å œ¢œ¬Ÿœ¨å˜ª = ####";F%
+4760 LPRINT USING"    ¡¨ «ã¨ ¦ ™œ¢« ©«¦§¦åž©žª = #####.####";FI
+4770 LPRINT
+4780 REM *********************************************************************
+4790 REM    10 “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ ‘’Žˆ•„ˆ—Œ ’—Œ €ŽŠ“’—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘
+4800 REM *********************************************************************
+4810 CLS
+4820 PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘"
+4830 PRINT
+4840 PRINT" ƒé©œ   0  š ˜ ¤˜ «œ¢œ é©œ  «¦ §¨æš¨˜££˜"
+4850 PRINT"        1  š ˜ ¤˜ ¬§¦¢¦š ©«¦ç¤ ¦  ˜§æ¢¬«œª œ¢¢œå¯œ ª ©­á¢£˜«¦ª"
+4860 PRINT"        2  š ˜ ¤˜ ¬§¦¢¦š ©«¦ç¤ ¦  ©®œ« ¡âª œ¢¢œå¯œ ª ©­á¢£˜«¦ª"
+4870 PRINT"        3  š ˜ ¤˜ ¬§¦¢¦š ©«¦ç¤ ¦  ˜§æ¢¬«œª ¡˜  ©®œ« ¡âª œ¢¢œå¯œ ª"
+4880 PRINT"        4  š ˜ ¤˜ ©¬¤œ®å©œ  š ˜ « ª œ§æ£œ¤œª œ§ ¢¦šâª"
+4890 PRINT: INPUT" „ˆŠŽ‚† "; EL%
+4900 ON EL%+1 GOTO 5900,4930,5240,4930,5680
+4910 CLS: PRINT MESS1$: PRINT: GOTO 4820
+4920 REM ---------------------------------------------------------------------
+4930 CLS: PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ €ŽŠ“’—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘"
+4940 LPRINT: LPRINT
+4950 LPRINT"  4  €ŽŠ“’„‘ „ŠŠ„ˆ–„ˆ‘ ‘”€Š‹€’Ž‘"
+4960 LPRINT
+4970 LPRINT TAB(13) "©¬¤«œ«˜š£â¤œª" TAB(34) "ž£ á¥¦¤œª" TAB(46) "˜ £¦çŸ ¦ «¦¬"
+4980 LPRINT TAB(46) "£œšá¢¦¬ ž£ á¥¦¤˜"
+4990 LPRINT TAB(3) "i" TAB(11) "x (m)" TAB(22) "y (m)";
+5000 LPRINT TAB(32) "a (cm)" TAB(39) "b (cm)"  TAB(48) "A (grad)"
+5010 LPRINT
+5020 REM ---------------------------------------------------------------------
+5030 FOR I%=1 TO N1%
+5040 II%=IDST%(I%): GOSUB 6650
+5050 XA=X(I%)+XS(IX%)/100: YA=Y(I%)+XS(IY%)/100
+5060 LPRINT USING"####";II%;:LPRINT USING"########.###";XA,YA;
+5070 SX=N(IXX%)*SA: SXY=N(IYX%)*SA: SY=N(IYY%)*SA
+5080 IF (SX+SY)/2<=0 OR SX*SY<SXY^2 GOTO 5180
+5090 SY0=SQR((SX+SY)/2+SQR((SX-SY)^2/4+SXY^2))
+5100 IF SX*SY<=0 THEN SX0=0: GOTO 5120
+5110 SX0=SQR((SX+SY)/2-SQR((SX-SY)^2/4+SXY^2))
+5120 LPRINT TAB(31);USING"####.#";SY0,SX0;
+5130 DX=2*N(IYX%): DY=N(IYY%)-N(IXX%)
+5140 IF DX=0 AND DY=0 GOTO 5180
+5150 GOSUB 6050
+5160 TH=GJ/2
+5170 LPRINT TAB(49);USING"###.##";TH;
+5180 LPRINT
+5190 NEXT I%
+5200 LPRINT
+5210 REM *********************************************************************
+5220 REM   11 “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ ‘’Žˆ•„ˆ—Œ ’—Œ ‘•„’ˆ‰—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘
+5230 REM *********************************************************************
+5240 CLS: PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ ‘•„’ˆ‰—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘"
+5250 PRINT
+5260 PRINT" ƒé©œ   0 š ˜ ¤˜ «œ¢œ é©œ  «¦ §¨æš¨˜££˜"
+5270 PRINT"        1 š ˜ «¦¤ ¬§¦¢¦š ©£æ «à¤ ©®œ« ¡é¤ œ¢¢œå¯œà¤ š ˜ æ¢¦¬ª"
+5280 PRINT"          «¦¬ª ©¬¤›¬˜©£¦çª «à¤ ©ž£œåà¤ «¦¬ › ¡«ç¦¬"
+5290 PRINT"        2 š ˜ «¦¤ ¬§¦¢¦š ©£æ œ§ ¢œš£â¤à¤ ©®œ« ¡é¤ œ¢¢œå¯œà¤"
+5300 PRINT"        3 š ˜ ¤˜ ©¬¤œ®å©œ  š ˜ « ª œ§æ£œ¤œs œ§ ¢¦šâª"
+5310 PRINT: INPUT" EˆŠŽ‚† "; REL%
+5320 ON REL%+1 GOTO 5900,5340,5340,5680
+5330 CLS: PRINT MESS1$: PRINT: GOTO 5250
+5340 LPRINT: LPRINT
+5350 LPRINT"  5  ‘•„’ˆ‰„‘ „ŠŠ„ˆ–„ˆ‘ ‘”€Š‹€’Ž‘"
+5360 LPRINT
+5370 LPRINT "  ˜§æ §¨¦ª" TAB(14) "ž£ á¥¦¤œª" TAB(28) "˜ £¦çŸ ¦";
+5380 LPRINT TAB(39) "˜§æ©«˜©ž «¬§ ¡ã" TAB(58) "˜ £¦çŸ o «¬§ ¡ã"
+5390 LPRINT TAB(28) "£œšá¢¦¬" TAB(48) "˜§æ¡¢ ©ž" TAB(68) "˜§æ¡¢ ©ž"
+5400 LPRINT TAB(28) "ž£ á¥¦¤˜" TAB(48) "˜§æ©«˜©žª" TAB(68) "˜ £¦¬Ÿå¦¬"
+5410 LPRINT TAB(14);"(cm)   (cm)   (grad)";
+5420 LPRINT TAB(42) "(m)     (cm)      (grad)    (cc)"
+5430 LPRINT
+5440 ON REL% GOTO 5460,5540
+5450 REM ---------------------------------------------------------------------
+5460 CLS: PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ ŽŠ—Œ T—Œ ‘•„’ˆ‰—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘"
+5470 FOR I%=1 TO N1%
+5480 IEX%=IDST%(I%): GOSUB 6650
+5490 FOR J%=1 TO I%-1 STEP 1
+5500 JEX%=IDST%(J%): GOSUB 6690
+5510 NEXT J%: NEXT I%
+5520 GOTO 5680
+5530 REM ---------------------------------------------------------------------
+5540 CLS: PRINT" “ŽŠŽ‚ˆ‘‹Ž‘ EˆŠ„‚‹„Œ—Œ ‘•„’ˆ‰—Œ „ŠŠ„ˆ–„—Œ ‘”€Š‹€’Ž‘"
+5550 PRINT"ƒé©œ «¦¬ª ¡à› ¡¦çª ˜¨ Ÿ£¦çª œ¥à«œ¨ ¡ãª ˜¤˜š¤é¨ ©žª ›ç¦ ©ž£œåà¤ š ˜"
+5560 PRINT"«¦¤ ¬§¦¢¦š ©£æ «à¤ ©«¦ ®œåà¤ «žª £œ«˜¥ç «¦¬ª ©®œ« ¡ãª â¢¢œ ¯žª "
+5570 PRINT"*** €’†‘„ ’Ž Š†‰’Ž <ENTER> ‘’Ž ’„ŠŽ‘ ***"
+5580 PRINT"*******************************************"
+5590 INPUT"˜§æ ©ž£œå¦ = ";IEX%
+5600 IF IEX%=0 GOTO 5680
+5610 IF IEX%>NMAX% OR IDINV%(IEX%)=0 THEN PRINT MESS1$: GOTO 5590
+5620 I%=IDINV%(IEX%): GOSUB 6650
+5630 INPUT"§¨¦ª ©ž£œå¦ = ";JEX%
+5640 IF JEX%>NMAX% OR IDINV%(JEX%)=0 THEN PRINT MESS1$: GOTO 5590
+5650 J%=IDINV%(JEX%): GOSUB 6690
+5660 GOTO 5590
+5670 REM *********************************************************************
+5680 LPRINT: LPRINT: CLS
+5690 PRINT
+5700 PRINT" ƒé©œ   0 š ˜ ¤˜ «œ¢œ é©œ  «¦ §¨æš¨˜££˜"
+5710 PRINT"        1 š ˜ ¤˜ œ§˜¤˜¢á™œ  «ž ¢ç©ž (ã «ž¤ œ¥¦£¦åà©ž) £œ"
+5720 PRINT"          £ ˜ á¢¢ž œ§ ¢¦šã «¦¬ «ç§¦¬ «à¤ ›œ©£œç©œà¤"
+5730 IF VER%=2 GOTO 5760
+5740 PRINT"        2 š ˜ ¤˜ œ§˜¤˜¢á™œ  «ž ¢ç©ž £œ « ª «œ¢ ¡âª"
+5750 PRINT"          ©¬¤«œ«˜š£â¤œª ©˜¤ §¨¦©œšš ©« ¡âª"
+5760 PRINT: INPUT" „ˆŠŽ‚† ";LM%
+5770 ON LM%+1 GOTO 5890,5790,5820
+5780 CLS: PRINT: PRINT MESS1$: GOTO 5690
+5790 OPEN "I",#1,"TEMPORAL"
+5800 FOR I%=1 TO NN%: INPUT #1, N(I%): NEXT I%
+5810 CLOSE #1: GOTO 1910
+5820 IF VER%=2 THEN: CLS: PRINT MESS1$: GOTO 5690
+5830 FOR I%=1 TO N1%
+5840 IX%=2*I%-1: IY%=2*I%
+5850 X(I%)=X(I%)+XS(IX%)/100
+5860 Y(I%)=Y(I%)+XS(IY%)/100
+5870 NEXT I%
+5880 GOTO 900
+5890 CLS
+5900 PRINT: PRINT: PRINT"’„ŠŽ‘ ’Ž“ Ž‚€‹‹€’Ž‘"
+5910 KILL "TEMPORAL"
+5920 END
+5930 REM *********************************************************************
+5940 REM      12 „Š„‚•Ž‘ ’—Œ €Œ†‚‹„Œ—Œ €€’††‘„—Œ
+5950 REM *********************************************************************
+5960 ID%=0
+5970 IF ABS(R)>400-1 AND R<0 THEN ID%=1
+5980 IF ABS(R)>400-1 THEN R=ABS(R)-400
+5990 IF ID%=1 THEN R=-R
+6000 R=R*10000
+6010 RETURN
+6020 REM *********************************************************************
+6030 REM      13 “ŽŠŽ‚ˆ‘‹Ž‘ ’Ž“ ’ŽŽ“ „”€’Ž‹„Œ†‘
+6040 REM *********************************************************************
+6050 IF DY=0 GOTO 6110
+6060 GJ=ATN(ABS(DX)/ABS(DY))/CF
+6070 IF DX>=0 AND DY<0 THEN GJ=200-GJ
+6080 IF DX<0 AND DY<0 THEN GJ=200+GJ
+6090 IF DX<0 AND DY>0 THEN GJ=400-GJ
+6100 RETURN
+6110 IF DX>0 THEN GJ=100
+6120 IF DX<0 THEN GJ=300
+6130 RETURN
+6140 REM *********************************************************************
+6150 REM   14 “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ ‡„‘„—Œ ’—Œ ‘’Žˆ•„ˆ—Œ „ŒŽ‘ ˆŒ€‰A
+6160 REM *********************************************************************
+6170 XX%=JX%*(JX%-1)/2+IX%: XY%=JY%*(JY%-1)/2+IX%
+6180 YX%=JX%*(JX%-1)/2+IY%: YY%=JY%*(JY%-1)/2+IY%
+6190 IF IX%<JX% THEN RETURN
+6200 XX%=IX%*(IX%-1)/2+JX%: XY%=IX%*(IX%-1)/2+JY%
+6210 YX%=IY%*(IY%-1)/2+JX%: YY%=IY%*(IY%-1)/2+JY%
+6220 IF IX%<JY% THEN XY%=JY%*(JY%-1)/2+IX%
+6230 RETURN
+6240 REM *********************************************************************
+6250 REM      15 €Œ’ˆ‘’Ž”† ‘“‹‹„’ˆ‰Ž“ ˆŒ€‰€ ‘„ ƒˆ€Œ“‘‹€’ˆ‰† ‹Ž”†
+6260 REM *********************************************************************
+6270 N(1)=SQR(N(1))
+6280 FOR I%=2 TO IL%: I1%=I%*(I%-1)/2+1: N(I1%)=N(I1%)/N(1): NEXT I%
+6290 FOR J%=2 TO IL%
+6300 JJ%=J%*(J%+1)/2: SK=0
+6310 FOR K%=1 TO J%-1: JK%=J%*(J%-1)/2+K%: SK=SK+N(JK%)*N(JK%): NEXT K%
+6320 IF SK>N(JJ%) THEN PRINT"*** €Ž‘ƒˆŽˆ‘’ˆ€ ‘’†Œ €Œ’ˆ‘’Ž”† ***": GOTO 5900
+6330 N(JJ%)=SQR(N(JJ%)-SK)
+6340 FOR I%=J%+1 TO IL% STEP 1
+6350 IJ%=I%*(I%-1)/2+J%: SK=0
+6360 FOR K%=1 TO J%-1
+6370 IK%=I%*(I%-1)/2+K%: JK%=J%*(J%-1)/2+K%
+6380 SK=SK+N(IK%)*N(JK%)/N(JJ%)
+6390 NEXT K%
+6400 N(IJ%)=N(IJ%)/N(JJ%)-SK
+6410 NEXT I%: NEXT J%
+6420 FOR I%=1 TO IL%
+6430 II%=I%*(I%+1)/2: N(II%)=1/N(II%)
+6440 FOR J%=I%+1 TO IL% STEP 1
+6450 JJ%=J%*(J%+1)/2: IJ%=J%*(J%-1)/2+I%: SK=0
+6460 FOR K%=I% TO J%-1
+6470 IK%=K%*(K%-1)/2+I%: KJ%=J%*(J%-1)/2+K%
+6480 SK=SK+N(IK%)*N(KJ%)/N(JJ%)
+6490 NEXT K%
+6500 N(IJ%)=-SK
+6510 NEXT J%: NEXT I%
+6520 FOR I%=1 TO IL%
+6530 FOR J%=1 TO I%
+6540 IJ%=I%*(I%-1)/2+J%: SK=0
+6550 FOR K%=I% TO IL%
+6560 KI%=K%*(K%-1)/2+I%: KJ%=K%*(K%-1)/2+J%
+6570 SK=SK+N(KI%)*N(KJ%)
+6580 NEXT K%
+6590 N(IJ%)=SK
+6600 NEXT J%: NEXT I%
+6610 RETURN
+6620 REM *********************************************************************
+6630 REM      16 “ŽŠŽ‚ˆ‘‹Ž‘ ’—Œ ‘’Žˆ•„ˆ—Œ ’—Œ ‘•„’ˆK—Œ „ŠŠ„ˆ–„—Œ
+6640 REM *********************************************************************
+6650 IX%=2*I%-1: IY%=2*I%
+6660 IXX%=IX%*(IX%+1)/2
+6670 IYX%=IY%*(IY%-1)/2+IX%: IYY%=IY%*(IY%+1)/2
+6680 RETURN
+6690 JX%=2*J%-1: JY%=2*J%
+6700 JXX%=JX%*(JX%+1)/2
+6710 JYX%=JY%*(JY%-1)/2+JX%: JYY%=JY%*(JY%+1)/2
+6720 GOSUB 6170
+6730 SX=(N(IXX%)+N(JXX%)-2*N(XX%))*SA
+6740 SY=(N(IYY%)+N(JYY%)-2*N(YY%))*SA
+6750 SXY=(N(JYX%)+N(IYX%)-N(YX%)-N(XY%))*SA
+6760 IF (SX+SY)/2<=0 OR SX*SY<SXY^2 THEN GOTO 6940
+6770 IF SX*SY<=0 THEN SX0=0: GOTO 6790
+6780 SX0=SQR((SX+SY)/2-SQR((SX-SY)^2/4+SXY^2))
+6790 SY0=SQR((SX+SY)/2+SQR((SX-SY)^2/4+SXY^2))
+6800 DX=2*SXY: DY=SY-SX
+6810 IF DX=0 AND DY=0 GOTO 6940
+6820 GOSUB 6050
+6830 TH=GJ/2
+6840 DX=X(J%)+XS(JX%)/100-X(I%)-XS(IX%)/100
+6850 DY=Y(J%)+XS(JY%)/100-Y(I%)-XS(IY%)/100
+6860 GOSUB 6050
+6870 SJ=SQR(DX^2+DY^2)
+6880 SS=SQR(SX*(DX/SJ)^2+SY*(DY/SJ)^2+2*SXY*DX/SJ*DY/SJ)
+6890 SAZ=SQR(SX*(DY/SJ)^2+SY*(DX/SJ)^2-2*SXY*DX/SJ*DY/SJ)/(CF*SJ)*100
+6900 LPRINT USING"#####";IEX%,JEX%;:LPRINT TAB(11);USING"#####.#";SY0,SX0;
+6910 LPRINT TAB(29);USING"###.##";TH;
+6920 LPRINT TAB(38);USING"#####.###";SJ;:LPRINT TAB(49);USING"###.#";SS;
+6930 LPRINT TAB(58);USING"###.#####";GJ;:LPRINT TAB(69);USING"###.#";SAZ
+6940 RETURN
+

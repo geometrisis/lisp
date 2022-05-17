@@ -1,0 +1,138 @@
+clear
+clc
+
+disp('HGRS87-->HATT projection coordinates, using OKXE polynomials. The program uses the OKXE polynomials for the inverse transformation from HGRS87-->HATT')
+
+disp('You should manually type the official polynomials (totally 12 numbers)')
+
+disp('********************************************')
+
+
+disp('DICLAIMER: THIS IS A TRIAL SOFTWARE FOR MY COLLEAGUES. BY NO MEANS EXPRESS ANY OFFICIALLY ACCEPTED METHODOLOGY AND THUS YOU SHOULD ALWAYS CHECK YOUR RESULTS!!!')
+
+disp('********************************************')
+
+disp('version 1.0 6/2/2015 by dimamp')
+
+
+disp('model: E= AO+A1x+A2y+A3x^2+A4y^2+A5xy')
+disp('model: N= BO+B1x+B2y+B3x^2+B4y^2+B5xy')
+
+disp('++++++++++++++++++++++++++++++++++++++++++')
+
+disp('E--> Easting in HGRS87')
+disp('N--> Northing in HGRS87')
+disp('x--> Easting in HATT')
+disp('y--> Northing in HATT')
+
+
+disp('++++++++++++++++++++++++++++++++++++++++++')
+
+disp('Please give the 12 polynomials')
+
+disp('********************************************')
+
+
+
+disp('Give the right values for Easting components')
+
+A0=input('A0 = ')
+A1=input('A1 = ')
+A2=input('A2 = ')
+A3=input('A3 = ')
+A4=input('A4 = ')
+A5=input('A5 = ')
+
+disp('********************************************')
+
+disp('Give the right values for Northing components')
+
+B0=input('B0 = ')
+B1=input('B1 = ')
+B2=input('B2 = ')
+B3=input('B3 = ')
+B4=input('B4 = ')
+B5=input('B5 = ')
+
+disp('********************************************')
+
+
+
+disp('Give the number of the points that you want to compute')
+
+n=input('number of points = ')
+
+for i=1:n
+     E=input('E = ')
+     N=input('N = ')
+     
+     E(i)=E;
+     N(i)=N;
+     
+     x_ap(i)=(E(i)-A0)/A1;
+     y_ap(i)=(N(i)-B0)/B1;
+
+     E_(i)=E(i)-A0;
+     N_(i)=N(i)-B0;
+     
+    G1=[A1+2*A3*x_ap(i)+A5*y_ap(i)  A2+2*A4*y_ap(i)+A5*y_ap(i)];
+    G2=[B1+2*B3*x_ap(i)+B5*y_ap(i)  B2+2*B4*y_ap(i)+B5*x_ap(i)];
+    
+    G=[G1;G2];
+    
+    b1=E_-A1*(x_ap(i))-A2*(y_ap(i))-A3*(x_ap(i)^2)-A4*(y_ap(i)^2)-A5*(x_ap(i)*y_ap(i));
+    b2=N_-B1*(x_ap(i))-B2*(y_ap(i))-B3*(x_ap(i)^2)-B4*(y_ap(i)^2)-B5*(x_ap(i)*y_ap(i));
+    
+    b=[b1;b2];
+    
+    dx=inv(G'*G)*(G'*b);
+    
+    xk=x_ap(i)+dx(1);
+    yk=y_ap(i)+dx(2);
+    
+    v_init=b-G*dx;
+    
+    k=1;
+    
+    while k<10
+        
+     x_ap(k)=xk;
+     y_ap(k)=yk;
+
+     E_=E-A0;
+     N_=N-B0;
+     
+     
+     G1=[A1+2*A3*x_ap(k)+A5*y_ap(k)  A2+2*A4*y_ap(k)+A5*y_ap(k)];
+     G2=[B1+2*B3*x_ap(k)+B5*y_ap(k)  B2+2*B4*y_ap(k)+B5*x_ap(k)];
+    
+     G=[G1;G2];
+    
+     b1=E_-A1*(x_ap(k))-A2*(y_ap(k))-A3*(x_ap(k)^2)-A4*(y_ap(k)^2)-A5*(x_ap(k)*y_ap(k));
+     b2=N_-B1*(x_ap(k))-B2*(y_ap(k))-B3*(x_ap(k)^2)-B4*(y_ap(k)^2)-B5*(x_ap(k)*y_ap(k));
+    
+     b=[b1;b2];
+    
+     dx=inv(G'*G)*(G'*b);
+    
+     x(k)=x_ap(k)+dx(1);
+     y(k)=y_ap(k)+dx(2);
+     
+     b=[b1;b2];
+    
+     dx=inv(G'*G)*(G'*b);
+    
+     x=x_ap(k)+dx(1);
+     y=y_ap(k)+dx(2);
+     v=b-G*dx;
+     xk=x;
+     yk=y;
+     k=k+1;
+     
+    end
+    
+    x(i)=xk;
+    y(i)=yk;
+end
+
+[x' y']
